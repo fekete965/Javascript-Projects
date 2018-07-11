@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Recipe App</h1>
+            <h2 class="header__subtitle">Let's plan your next meal.</h2>
+        </div>
+    </header>
+    
+    <div class="actions">
+        <label>
+            <span class="search-icon"></span>
+            <input id="search-text" class="input" type="text" placeholder="Search recipe">
+        </label>
+    </div>
+    <div class="container">
+        <div id="recipe-list"></div>
+        <button id="create-recipe" class="button">Add Recipe</button>  
+    </div>
+    <script src="/scripts/index-bundle.js"></script>
+</body>
+</html>

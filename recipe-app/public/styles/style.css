@@ -1,0 +1,313 @@
+/*
+#00897b	(0,137,123)
+#00564d	(0,86,77)
+#282828	(40,40,40)
+#363636	(54,54,54)
+#969696	(150,150,150)
+*/
+
+/* Base Styles */
+
+
+/*
+
+BEM (block, element, modifier)
+
+Block     -> house
+Element   -> house__kitchen
+Modifier  -> house--condo
+
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;   
+}
+
+body {
+    color: #363636;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    }
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: #00897b;
+}
+
+/* Container */
+
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+/* Header */
+
+.header {
+    background: #00564d;
+    color: white;
+    padding: 1.6rem 0;
+}
+
+.header__title {
+    font-size: 3.2rem;
+    margin-bottom: .4rem;
+}
+
+.header__subtitle {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+/* Actions Bar */
+
+.actions {
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #dedfe0;
+    padding: .8rem;
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+.actions__container {
+    align-items: center;
+    display: flex;
+    max-width: 60rem;
+    margin: 0 auto;
+    min-height: 3rem;
+    padding: 0 1.6rem;
+}
+
+.actions__container--spaced {
+    justify-content: space-between
+}
+
+/* Form Inputs */
+
+.input {
+    display: block;
+    border: 1px solid #DEDFE0;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+    padding: .4rem .8rem;
+    float: left;
+}
+
+.dropdown {
+    border-radius: 0;
+    border: 1px solid #DEDFE0;
+    background: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    height: 3rem;
+    margin-right: .8rem;
+}
+
+.button {
+    background: #00564d;
+    border: none;
+    border-bottom: 2px solid #00564d;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: .8rem;
+    transition: background .3s ease;
+    outline: none;
+}
+
+.button:hover {
+    background: #00897b;
+}
+
+.button--secondary {
+    background: #282828;
+    border-bottom: 2px solid #363636;
+}
+
+.button--secondary:hover {
+    background: #969696;
+}
+
+/* Recipe editor */
+
+.title-input,
+.add-ingredient__input {
+    border: 1px solid #ccc;
+    font-size: 2rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    padding: .8rem;
+    width: 100%;
+}
+
+.body-input {
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 300;
+    display: block;
+    margin: 2.4rem 0;
+    min-height: 15rem;
+    padding: .8rem;
+    width: 100%;
+}
+
+/* Recipe List Item */
+
+.list-item {
+    text-decoration: none;
+    color: #333333;
+    background: #F7F7F7;
+    border: 1px solid #dedfe0;
+    margin: 1.6rem 0;
+    padding: 1.6rem;
+    display: block;
+    transition: background .3s ease;
+}
+
+.list-item:hover {
+    background: #333333;
+    color: #fff;
+}
+
+.list-item__title {
+    font-size: 1.8rem;
+    margin-bottom: .4rem
+}
+
+.list-item__subtitle {
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.empty-message {
+    text-align: center;
+    margin: 3.2rem 0;
+}
+
+.search-icon {
+    display: block;
+    margin: 7px;
+    height: 15px;
+    width: 15px;
+    background: url(../images/searchicon.png) no-repeat;
+    background-size: 15px;
+    float: left;
+}
+
+.add-ingredient__button {
+    margin-left: 0;
+    height: 41px;
+    float: left;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #00564d;
+    border-left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.add-ingredient__input {
+    margin: 0;
+    width: 50%;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+
+.ingredient__label {
+    position: absolute;
+    padding-left: 1.6rem;
+    width: 100%;
+    left: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+
+.ingredient__checkbox {
+    display: none;
+	margin: 20px 5px;	
+}
+
+.list-item--ingredient {
+    position: relative;
+    padding: 0;
+    height: 52px;
+    line-height: 52px;
+    clear: both;
+}
+
+
+
+.list-item--ingredient-collected {
+    background: #3f867f;
+}
+
+.list-item--ingredient-collected .ingredient__label{
+    font-weight: bold;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.button--remove-ingredient {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.add-ingredient-container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.danger-zone {
+    align-items: center;
+    text-align: center;
+    max-width: 60rem;
+    margin: .5rem auto;
+    min-height: 3rem;
+    padding: 2rem 1.6rem;
+}
+
+.danger-zone hr {
+    height: .5rem;
+    background: #bb2124;
+    border: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.danger__title {
+    font-size: 1.8rem;
+    margin-bottom: .4rem;
+    font-weight: bold;
+}

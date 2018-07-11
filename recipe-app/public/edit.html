@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Recipe App</h1>
+            <h2 class="header__subtitle">Let's plan your next meal.</h2>
+        </div>
+    </header>
+
+    <div class="actions">
+        <div class="actions__container actions__container--spaced">
+            <a href="/index.html">Home</a>
+            <span id="recipe-last-edited"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <input id="recipe-title" class="title-input" type="text" placeholder="Recipe title">
+        <textarea id="recipe-description" class="body-input" placeholder="Enter recipe description"></textarea>
+        <div id="ingredient-list" class="ingredients"></div>
+        <form class="add-ingredient-container" id="ingredient-form">
+            <input id="new-ingredient" class="add-ingredient__input" type="text" placeholder="Ingredient">
+            <button type="submit" class="add-ingredient__button button button--primary">Add Ingredient</button>
+        </form>
+        <div class="danger-container clearfix">
+            <div class="danger-zone">
+                <p class="danger__title">Danger Zone</p>
+                <hr>
+            </div>
+            <button id="remove-recipe" class="button button--secondary">Remove Recipe</button>
+        </div>
+    </div>
+
+    <script src="/scripts/edit-bundle.js"></script>
+</body>
+</html>

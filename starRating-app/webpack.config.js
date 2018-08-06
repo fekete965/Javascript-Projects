@@ -1,22 +1,34 @@
 const path = require('path');
+const isDevBuild = false;
+
 module.exports = {
-  entry: './src/js/main.ts',
+  entry: {
+    'StarRating': './app/src/js/main.ts'
+  },
   devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public/js')
+    path: path.resolve(__dirname, 'app/dist/js'),
+    library: 'StarRating'
   },
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|tff)$/,
-        use: 'url-loader?limit=25000'
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)$/,
+        loader: 'url-loader?limit=25000'
       },
       {
         test: /\.scss$/,
         use: [
             "style-loader",
-            "css-loader",
+            {
+              loader: 'typings-for-css-modules-loader',
+							options: {
+								modules: true,
+								localIdentName: isDevBuild ? '[local]' : '[sha1:hash:hex:4]',
+								minimize: false
+              }
+            },
             "sass-loader"
         ]
       },
@@ -25,14 +37,16 @@ module.exports = {
         use: 'awesome-typescript-loader',
         exclude: /node_modules/
       }
+      
     ]
-    },
-    resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
-    },
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
+    modules: [ path.resolve(__dirname, "src"), path.resolve(__dirname, "local_modules"), path.resolve(__dirname, "node_modules")]
+  },
   devtool: 'source-map',
   devServer: {
-    publicPath: path.join('/public/')
+    publicPath: path.join('/dist/')
   }
 };
 

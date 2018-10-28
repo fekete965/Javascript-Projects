@@ -1,0 +1,399 @@
+@font-face {
+	font-family: Ds-Digital;
+	src: url(./fonts/Ds-Digital.ttf);
+}
+
+@font-face {
+	font-family: Visitor-1;
+	src: url(./fonts/Visitor-1.ttf);
+}
+
+/******************
+Styling Index Page
+*******************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+}
+
+/******************
+Styling Target Div
+*******************/
+#mine-zone {
+	margin: 1% auto;
+	text-align: center;
+}
+
+/**********************
+ STYLING GAME ELEMENTS
+***********************/
+
+/* GAME CONTAINER */
+.game-container {
+	display: inline-block;
+	position: relative;
+	border-top: 3px solid #ffffff;
+	border-right: 3px solid #7b7b7b;
+	border-bottom: 3px solid #7b7b7b;
+	border-left: 3px solid #ffffff;
+}
+
+/****************
+TOP BAR ELEMENTS
+*****************/
+
+/* GAME TOP BAR/HEADER */
+.top-bar {
+	position: relative;
+	margin: 6px;
+	height: 50px;
+	background: #bdbdbd;
+	border-top: 2px solid #7b7b7b;
+	border-right: 2px solid #ffffff;
+	border-bottom: 2px solid #ffffff;
+	border-left: 2px solid #7b7b7b;
+	outline: 7px solid #bdbdbd;
+	text-align: center;
+}
+
+/* TOP BAR TIMER, BUTTON, COUNTER */
+div.timer,
+div.btn-new-game,
+div.mine-counter {
+	display: inline-block;
+	user-select: none;
+}
+
+/* TIMER & COUNTER */
+div.timer,
+div.mine-counter {
+	position: absolute;
+	margin: 6px;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	font-family: Ds-Digital;
+	line-height: 36px;
+	font-size: 40px;
+	color: red;
+	background: #000000;
+}
+
+/* TIMER */
+div.timer {
+	right: 0;
+}
+
+/* COUNTER */
+div.mine-counter {
+	left: 0;
+}
+
+/* BUTTON */
+div.btn-new-game {
+	margin: 6px;
+}
+
+/***********************
+TOP BAR BUTTON (SMILEY)
+************************/
+
+/* BASIC STYLING */
+.top-bar button.button--new-game {
+	width: 36px;
+	height: 36px;
+	background: #bdbdbd url(./../images/smiley.png) no-repeat 3px 2px;
+	background-size: 60px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #7b7b7b;
+	border-bottom: 2px solid #7b7b7b;
+	border-left: 2px solid #fff;
+	outline: 1px solid #7b7b7b;
+	cursor: pointer;
+}
+
+/* BUTTON CLICKED */
+.top-bar button.button--new-game:active,
+.top-bar button.button--new-game.lose:active,
+.top-bar button.button--new-game.win:active {
+	width: 35px;
+	height: 35px;
+	background: #bdbdbc url(./../images/smiley.png) no-repeat 4px 5px;
+	background-size: 60px;
+	border-top: 1px solid #7b7b7b;
+	border-left: 1px solid #7b7b7b;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	outline: 2px solid #7b7b7b;
+}
+
+/* MOUSE DOWN */
+.top-bar button.button--new-game.mousedown {
+	background: #bdbdbd url(./../images/smiley.png) no-repeat -30px 2px;
+	background-size: 60px;
+}
+
+/* GAME OVER - LOSE */
+.top-bar button.button--new-game.lose {
+	background: #bdbdbd url(./../images/smiley.png) no-repeat -30px -28px;
+	background-size: 60px;
+}
+
+/* GAME OVER - WIN */
+.top-bar button.button--new-game.win {
+	background: #bdbdbd url(./../images/smiley.png) no-repeat 3px -28px;
+	background-size: 60px;
+}
+
+/********************
+STYLING CONTEXT MENU
+*********************/
+
+/* ACTUAL MENU */
+.context-menu {
+	position: absolute;
+	min-width: 75px;
+	padding: 0 2px;
+	background: #d4d0c8;
+	font-family: Arial;
+	font-size: 12px;
+	border-top: 1px solid #ffffff;
+	border-right: 1px solid #7b7b7b;
+	border-bottom: 1px solid #7b7b7b;
+	border-left: 1px solid #ffffff;
+}
+
+/* MENU UNORDERED LIST */
+.context-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* MENU LIST ELEMENTS */
+.context-menu li.menu-el {
+	margin: 2px 0;
+	padding: 1px 0;
+	width: 100%;
+	color: #000;
+	cursor: pointer;
+}
+
+/* MENU LIST ELEMENT HOVER & FOCUS */
+.context-menu li.menu-el:hover,
+.context-menu li.menu-el:focus {
+	color: #fff;
+	background: #0a246a;
+}
+
+/* MENU PAGES */
+.menu-page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	font-weight: 12px;
+	background: #bdbdbd;
+	border-top: 2px solid #ffffff;
+	border-right: 2px solid #7b7b7b;
+	border-bottom: 2px solid #7b7b7b;
+	border-left: 2px solid #ffffff;
+	outline: 3px solid #bdbdbd;
+}
+
+.menu-page > div > div {
+	margin: 10px;
+}
+
+/* MENU PAGE - LABEL */
+.menu-page label {
+	font-weight: normal;
+}
+
+/* MENU PAGE - INPUTS */
+.menu-page input {
+	margin-left: 5px;
+	width: 40px;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+/* MENU PAGE - UNORDERED LIST */
+.menu-page ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* MENU PAGE - LIST ELEMENTS */
+.menu-page ul li {
+	text-align: justify;
+	margin: 10px 5px;
+	font-family: Arial;
+	font-size: 10px;
+	text-indent: 10px;
+}
+
+.menu-page ul li:before {
+	content: '- ';
+}
+
+/* MENU PAGE - DIFFERENT STYLE FOR FIRST ELEMENT */
+.menu-page ul li:first-child {
+	margin: 5px 0 0 0;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.menu-page ul li:first-child:before {
+	content: '';
+}
+
+/* MENU PAGE - BUTTON */
+.button {
+	width: 102px;
+	margin: 2px;
+	padding: 2px;
+	background: #c6c6c6;
+	border-left: 1px solid #dedede;
+	border-right: 1px solid #848484;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #848484;
+}
+
+/* BUTTON PAGE - HOVER & FOCUS */
+.button:hover,
+.button:focus {
+	outline: 1px solid #000000;
+}
+
+/************
+STYLING GRID
+*************/
+
+table.mine-container {
+	top: 50px;
+	margin: 5px;
+	font-family: Visitor-1;
+	border-spacing: 0;
+	border-top: 2px solid #7b7b7b;
+	border-right: 2px solid #fff;
+	border-left: 2px solid #7b7b7b;
+	border-bottom: 2px solid #fff;
+	outline: 6px solid #bdbdbd;
+	user-select: none;
+	clear: both;
+}
+
+thead.top-bar {
+	background: #c0c0c0;
+}
+
+tbody.mine-field tr td {
+	width: 18px;
+	height: 18px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: #bdbdbd;
+	cursor: pointer;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #7b7b7b;
+	border-left: 2px solid #fff;
+	border-bottom: 2px solid #7b7b7b;
+}
+
+tbody.mine-field tr td:hover {
+	background: #dcdddf;
+}
+
+tbody.mine-field tr td.marked {
+	background: #bdbdbd url('./../images//flag.png');
+	background-size: 20px;
+}
+
+tbody.mine-field tr td.marked:hover {
+	background: #dcdddf url('./../images//flag.png');
+	background-size: 20px;
+}
+
+tbody.mine-field tr td.revealed {
+	width: 20px;
+	height: 20px;
+	background: #bdbdbd;
+	border: 1px solid #808080;
+}
+
+/* NUMBER COLORS */
+tbody.mine-field tr td.revealed.color-0 {
+	background: #bdbdbd;
+}
+
+tbody.mine-field tr td.revealed.color-1 {
+	color: #0000ff;
+}
+
+tbody.mine-field tr td.revealed.color-2 {
+	color: #007b00;
+}
+
+tbody.mine-field tr td.revealed.color-3 {
+	color: #ff0000;
+}
+
+tbody.mine-field tr td.revealed.color-4 {
+	color: #00007b;
+}
+
+tbody.mine-field tr td.revealed.color-5 {
+	color: #7b0000;
+}
+
+tbody.mine-field tr td.revealed.color-6 {
+	color: #008080;
+}
+
+tbody.mine-field tr td.revealed.color-7 {
+	color: #000000;
+}
+
+tbody.mine-field tr td.revealed.color-8 {
+	color: #7b7b7b;
+}
+
+/* INDIVIDUAL FIELDS */
+
+/* THE MINE THAT HAS BEEN CLICKED ON */
+tbody.mine-field tr td.revealed.mine.triggered {
+	background: #ff0000 url(./../images/mine.png) no-repeat 1px 1px;
+	background-size: 40px;
+}
+
+/* REVEALED MINE */
+tbody.mine-field tr td.revealed.mine {
+	background: #bdbdbd url('./../images/mine.png') no-repeat 1px 1px;
+	background-size: 40px;
+}
+
+/* GAME OVER, MARKED MINES */
+tbody.mine-field.game-over tr td.revealed.mine.marked {
+	background: #bdbdbd url('./../images//flag.png');
+	background-size: 20px;
+}
+
+/* GAME OVER, MARKED FIELDS */
+tbody.mine-field.game-over tr td.marked {
+	background: #bdbdbd url('./../images/mine.png') no-repeat -21px 0px;
+	background-size: 40px;
+}

@@ -1,11 +1,11 @@
 interface IMainScss {
   'rating-stars-container': string;
-  'rating-label-container': string;
+  'rating-span-container': string;
   'rating-star': string;
   'full': string;
   'hover': string;
-  'rating-label': string;
-  'show-label': string;
+  'rating-span': string;
+  'show-span': string;
 }
 
 declare const locals: IMainScss;

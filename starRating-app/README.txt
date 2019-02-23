@@ -8,69 +8,62 @@ Initialize:
 
 2. - Call "StarRating.create()" function passing the arguments:
 	<script> 
-		StarRating.create(args)
+		StarRating.create(target, options)
 	<\script>
 	
-// First argument is required, the rest are optional //
+ First argument is required, options object is optional
 
+Generated Structure:
+-------------------
+-root
+	-wrapper
+		-starContainer
+			-stars
+		-spanContainer
+			-span
 
 Arguments:
 ----------
 1. - targetDiv: String | HTMLElement - Required,
-- Only required arugment
+- Required argument
 - It can be a string or an already selected HTML Element
 
-
-2. - backgroundColor: string = '#ef7d22' - Optional
-- Default color is VideoSmart Orange
-- It takes a string - use any hexcolor code or default css color name
-
-
-3. - fontColor: string = '#fff' - Optional
-- Default color is White
-- It takes a string - use any hexcolor code or default css color name
-
-
-4. - initialValue: number - Optional
-- Default value is -1 means stars are not selected
-- Range 0 - 4
-
-
-5. - isEnabled: boolean = true - Optional
-- Default value is true
-- It takes a bollean value
-
-
-6. - callback: Function = undefined - Optional
-- Callback takes an argument that is the selected star's index
-- Range 0 -4
-
+2. - options: object - optional
+	config props: 
+		classes: object - Optional
+		initialValue: number - Optional - initial selected stars
+  		disabled: boolean - Optional - enable/disable the
+  		ratingText string[] - Optional - creates stars and labels based on the lengh (min length: 2) 
+  		callback: Function - Optional - it gets called everytime the user click on a star
+  	
+	classes props:
+		spanContainer: string - Optional - add a class to the spanContainer element
+		span: string - Optional - add a class to the span element
+		root: string - Optional - add a class to the root element
+		starContainer: string - Optional - add a class to the startContainer element
+		wrapper: string - Optional - add a class to the wrapper element
 
 Examples:
--------
-// Create Rating using "Default Setup" //
-StarRating.create('targetDiv-1');
+--------
+
+// Default:
+StarRating.create('targetDiv');
+
+// Customized:
+StarRating.create('targetDiv', options);
 
 
-// Create Rating with "Green Background Color" //
-StarRating.create('targetDiv-2', '#0f0');
-
-
-// Create Rating with "Purple Font Color" //
-StarRating.create('targetDiv-3', undefined, purple);
-
-
-// Create Rating with "Default Color and the 3. Star Selected" //
-StarRating.create('targetDiv-4', undefined, undefined, 2);
-
-
-// Create Rating with "Default colors and a Disabled Rating" //
-StarRating.create('targetDiv-5', undefined, undefined, undefined, false);
-
-
-// Create Rating with "Callback Function only" //
-StarRating.create('targetDiv-6', undefined, undefined, undefined, undefined, (e) => { console.log('Show index:', e)});
-
-
-// Create Rating with "Blue Blackground Color, Black Font Color, 3 Stars Selcted, Disabled and a Callback Function" //
-StarRating.create('targetDiv-7', blue, black, 2, false, (e) => { console.log('Show index:', e)});
+// Options:
+const options = {
+	classes: {
+		spanContainer: 'spanContainer',
+		span: 'span',
+		root: 'root',
+		starContainer: 'starContainer',
+		wrapper: 'wrapper'
+	},
+	initialValue: -1,
+	disabled: false,
+	newRatingText: ['1','2','3','4','5'],
+	callback: function(id) { console.log(id); }
+};

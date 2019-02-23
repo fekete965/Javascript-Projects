@@ -15,5 +15,11 @@ https://ben-todo-app.surge.sh
 Recipe-app:
 https://ben-recipes-app.surge.sh
 
+Budget-app:
+https://ben-budget-app.surge.sh
+
 Star Rating-app:
 https://ben-starrating-app.surge.sh
+
+Minesweeper:
+http://ben-minesweeper.surge.sh

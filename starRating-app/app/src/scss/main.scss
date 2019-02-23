@@ -9,7 +9,7 @@
 
 %rating-container-base {
 	display: block;
-	height: 48px;
+	min-height: 48px;
 
 	* {
 		margin: 0;
@@ -56,21 +56,20 @@
 	}
 }
 
-.rating-label-container {
+.rating-span-container {
 	@extend %rating-container-base;
 
 	text-align: left;
 	font-size: 10px;
 
-	.rating-label {
+	.rating-span {
 		display: none;
 		font-weight: bold;
-
-		&.show-label {
+		
+		&.show-span {
 			display: inline-block;
 			margin: 10px 0 0 6px;
 			padding: 6px 10px;
-			font-family: Helvetica, Arial, sans-serif;
 			text-align: left;
 			line-height: 1em;
 			font-size: 17px;

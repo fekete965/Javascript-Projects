@@ -1,23 +1,29 @@
 import './classList.js';
 import { StarContainer } from './StarContainer';
+import { IConfig } from '../interface/IConfig.js';
 
-/* Args:
- 1 - targetDiv: HTMLElement - Required,
- 2 - backgroundColor: string = '#ef7d22' - Optional
- 3 - fontColor: string = '#fff' - Optional
- 4 - initialValue: number - Optional
- 5 - isEnabled: boolean - Optional
- 6 - callback: Function = undefined - Optional
+// New Version:
+// 	Args:
+// 	 1 - targetDiv: string - Required,
+//   2 - config : object - Optional 
+//  	config props: 
+// 			classes: object - Optional
+// 			initialValue: number - Optional
+//  		disabled: boolean - Optional
+//  		ratingText string[] - Optional
+//  		callback: Function - Optional
+//  	
+//		classes props:
+// 			spanContainer: string - Optional 
+// 			span: string - Optional 
+// 			root: string - Optional 
+// 			starContainer: string - Optional
+// 			wrapper: string - Optional
 
-*/
 
 export function create(
 	target: string | HTMLElement,
-	backgroundColor: string,
-	fontColor: string,
-	initialValue: number,
-	isEnabled: boolean,
-	callback?: (value?: number) => void
+	config: IConfig
 ): StarContainer {
 	let targetDiv: HTMLElement;
 
@@ -29,5 +35,5 @@ export function create(
 		return undefined;
 	}
 
-	return new StarContainer(targetDiv, backgroundColor, fontColor, initialValue, isEnabled, callback);
+	return new StarContainer(targetDiv, config);
 }

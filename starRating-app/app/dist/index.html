@@ -9,12 +9,33 @@
 
   <style>
     #rating-container {
-      display: block;
       margin: 2rem auto;
-      width: 270px;
-      height: 48px;
       text-align: center;
     }
+
+    .spanContainer {
+      border: 5px solid purple;
+    }
+
+    .span {
+      font-family: monospace;
+      color: red;
+      background: blue;
+    }
+
+    .root {
+      background: magenta;
+    }
+
+    .starContainer {
+      color: green;
+    }
+
+    .wrapper {
+      /* display: inline-block; */
+      background: brown;
+    }
+    
   </style>
 </head>
 
@@ -25,7 +46,22 @@
   <script type="text/javascript" src="js/main.js"></script>
 
   <script>
-    StarRating.create('rating-container', undefined, undefined, undefined, undefined, (e) => { console.log('Value:', e) })
+
+    const config = {
+      classes: {
+        spanContainer: 'spanContainer',
+        span: 'span',
+        root: 'root',
+        starContainer: 'starContainer',
+        wrapper: 'wrapper'
+      },
+      initialValue: -1,
+      disabled: false,
+      newRatingText: ['1','2','3','4','5'],
+      callback: function(id) { console.log(id); }
+    };
+
+    StarRating.create('rating-container', config);
   </script>
 
 </body>
